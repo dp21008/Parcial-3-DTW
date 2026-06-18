@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nivel 3 - La Evidencia del Explorador</title>
+
+    <link rel="stylesheet" href="nivel3.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="bg"></div>
+
+    <main class="container">
+
+        <section class="card">
+
+            <div class="gem gem-left"></div>
+            <div class="gem gem-right"></div>
+
+            <h1>NIVEL 3</h1>
+
+            <h2>LA EVIDENCIA DEL EXPLORADOR</h2>
+
+            <p class="description">
+                El explorador debe dejar constancia visual de su hallazgo.
+                Activa la cámara, captura una fotografía como evidencia
+                y almacénala para las generaciones futuras.
+            </p>
+
+            <div class="camera-box">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+
+            <div class="btn-group">
+                <button id="startCameraBtn" class="action-btn">ACTIVAR CÁMARA</button>
+                <button id="captureBtn" class="action-btn" disabled>CAPTURAR FOTO</button>
+            </div>
+
+            <div id="statusMessage" class="status-message"></div>
+
+            <div id="photosContainer" class="photos"></div>
+
+            <button id="nextLevelBtn" class="next-btn" disabled>
+                CONTINUAR AL NIVEL 4
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="nivel3.js"></script>
+
+</body>
+
+</html>
