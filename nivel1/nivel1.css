@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg-dark:#0d0717;
+
+    --cave-dark:#1a1030;
+    --cave:#2b1d4f;
+    --cave-light:#453073;
+
+    --crystal:#9d6cff;
+    --crystal-light:#c7a7ff;
+
+    --portal:#6effb7;
+
+    --text:#f3f0ff;
+
+    --shadow:#080410;
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:'Press Start 2P', cursive;
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    position:relative;
+}
+
+/* fondo */
+
+.cave-bg{
+
+    position:fixed;
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(157,108,255,.25),
+            transparent 20%
+        ),
+
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(110,255,183,.12),
+            transparent 15%
+        ),
+
+        radial-gradient(
+            circle at 50% 80%,
+            rgba(157,108,255,.15),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            180deg,
+            #24153d,
+            #0d0717
+        );
+
+    z-index:-1;
+}
