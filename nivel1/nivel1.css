@@ -249,3 +249,123 @@ h2{
 
     font-size:.75rem;
 }
+
+
+
+/* Mensajes */
+
+.status-message{
+
+    min-height:40px;
+
+    margin-bottom:30px;
+
+    color:var(--portal);
+
+    line-height:1.8;
+
+    font-size:.7rem;
+}
+
+
+/* Botones */
+
+.action-btn,
+.next-btn{
+
+    font-family:'Press Start 2P', cursive;
+
+    border:none;
+
+    padding:18px 25px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    border-radius:8px;
+}
+
+.action-btn{
+
+    background:var(--crystal);
+
+    color:white;
+
+    box-shadow:
+        5px 5px 0 #6943bd;
+}
+
+.action-btn:hover{
+
+    transform:
+        translate(-2px,-2px);
+}
+
+.next-btn{
+
+    display:block;
+
+    margin:20px auto 0;
+
+    background:#463366;
+
+    color:white;
+
+    box-shadow:
+        5px 5px 0 #24153d;
+}
+
+.next-btn:not(:disabled){
+
+    background:var(--portal);
+
+    color:#0d0717;
+
+    box-shadow:
+        5px 5px 0 #46c98d;
+}
+
+.next-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+}
+
+
+
+
+/* responsividad */
+
+@media(max-width:768px){
+
+    .cave-card{
+        padding:25px;
+    }
+
+    .coordinates{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:1.2rem;
+    }
+
+    h2{
+        font-size:.75rem;
+    }
+
+    .description,
+    .coordinate-box p,
+    .status-message{
+
+        font-size:.6rem;
+    }
+
+    .action-btn,
+    .next-btn{
+
+        font-size:.55rem;
+    }
+}
