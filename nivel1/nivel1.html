@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nivel 1 - El Guardián de la Ubicación</title>
+
+    <link rel="stylesheet" href="nivel1.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="cave-bg"></div>
+
+    <main class="container">
+
+        <!-- tarjeta base -->
+        <section class="cave-card">
+
+            <!-- estos div servirán para hacer decoraciones brillantes -->
+            <div class="crystal crystal-left"></div>
+            <div class="crystal crystal-right"></div>
+
+            <h1>NIVEL 1</h1>
+
+            <h2>EL GUARDIÁN DE LA UBICACIÓN</h2>
+
+            <p class="description">
+                Si por estos lares deseas pasar, tu ubicación habrás de revelar, pues el guardián de este nivel, tu posición ha de conocer.
+                Pulsa el botón para obtener tus coordenadas y avanzar al siguiente desafío.
+            </p>
+
+            <button id="locationBtn" class="action-btn">
+                OBTENER UBICACIÓN
+            </button>
+
+            <div class="coordinates">
+
+                <div class="coordinate-box">
+                    <span>LATITUD</span>
+                    <p id="latitude">---</p>
+                </div>
+
+                <div class="coordinate-box">
+                    <span>LONGITUD</span>
+                    <p id="longitude">---</p>
+                </div>
+
+            </div>
+
+            <div id="statusMessage" class="status-message"></div>
+
+            <button id="nextLevelBtn" class="next-btn" disabled>
+                CONTINUAR AL NIVEL 2
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="nivel1.js"></script>
+
+</body>
+
+</html>
