@@ -12,6 +12,8 @@ const statsCard = document.getElementById("statsCard");
 
 // Elementos de la Card
 const validRecordsCount = document.getElementById("validRecordsCount");
+const totalRecordsCount = document.getElementById("totalRecordsCount");
+const invalidRecordsCount = document.getElementById("invalidRecordsCount");
 const avgTemp = document.getElementById("avgTemp");
 const avgHum = document.getElementById("avgHum");
 const avgPres = document.getElementById("avgPres");
@@ -117,6 +119,8 @@ startBtn.addEventListener("click", () => {
 // Función para poblar la UI con los resultados calculados
 function displayFinalResults(data) {
     validRecordsCount.textContent = data.totalValid.toLocaleString("es");
+    totalRecordsCount.textContent = data.totalProcessed.toLocaleString("es");
+    invalidRecordsCount.textContent = data.totalInvalid.toLocaleString("es");
 
     avgTemp.textContent = data.averages.temperatura.toFixed(2) + " °C";
     avgHum.textContent = data.averages.humedad.toFixed(2) + " %";

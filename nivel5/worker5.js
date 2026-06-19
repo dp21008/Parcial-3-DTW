@@ -67,7 +67,9 @@ self.onmessage = function(e) {
     self.postMessage({
         type: "result",
         data: {
+            totalProcessed: totalRecords,
             totalValid: validRecordsCount,
+            totalInvalid: totalRecords - validRecordsCount,
             averages: {
                 temperatura: avgTemp,
                 humedad: avgHum,
