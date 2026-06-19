@@ -165,6 +165,25 @@ h2 {
     cursor: not-allowed;
 }
 
+.download-btn {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.45rem;
+    color: #fff;
+    background: linear-gradient(45deg, #8a2be2, #4b0082);
+    border: 1px solid #00ffff;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.download-btn:hover {
+    background: linear-gradient(45deg, #9b4dff, #5c00a3);
+    box-shadow: 0 0 10px #00ffff;
+    transform: scale(1.05);
+}
+
 /* Progreso */
 .progress-section {
     margin-top: 2rem;
