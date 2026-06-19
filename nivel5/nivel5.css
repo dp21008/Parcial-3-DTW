@@ -164,11 +164,18 @@ h2 {
     color: #00ffff;
 }
 
+/* Animación para los resultados */
+@keyframes fadeInSlideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 /* Stats Card overrides */
 .stats-card {
     background: rgba(0, 0, 0, 0.6);
     border: 1px solid #8a2be2;
     margin-top: 2rem;
+    animation: fadeInSlideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .stats-header {

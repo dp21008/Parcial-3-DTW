@@ -1,5 +1,6 @@
 // nivel5.js - Archivo principal para el Nivel 5
 
+(() => {
 const startBtn = document.getElementById("startBtn");
 const uiCounter = document.getElementById("uiCounter");
 const statusMessage = document.getElementById("statusMessage");
@@ -157,7 +158,12 @@ downloadBtn.addEventListener("click", () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "resultados_portal_cuantico.json";
+    
+    // Generar nombre de archivo con marca de tiempo
+    const now = new Date();
+    const timestamp = `${now.getDate().toString().padStart(2, '0')}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getFullYear()}_${now.getHours().toString().padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}`;
+    a.download = `resultados_portal_cuantico_${timestamp}.json`;
+    
     document.body.appendChild(a);
     a.click();
     
@@ -165,3 +171,5 @@ downloadBtn.addEventListener("click", () => {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 });
+
+})(); // Fin de la función autoejecutable (IIFE)

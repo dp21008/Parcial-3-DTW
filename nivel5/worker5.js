@@ -56,10 +56,10 @@ self.onmessage = function(e) {
     const top10Temp = validTemps.slice(0, 10);
     const top10Pres = validPressures.slice(0, 10);
     
-    // Calcular promedios generales
-    const avgTemp = validRecordsCount > 0 ? (sumTemp / validRecordsCount) : 0;
-    const avgHum  = validRecordsCount > 0 ? (sumHum / validRecordsCount) : 0;
-    const avgPres = validRecordsCount > 0 ? (sumPres / validRecordsCount) : 0;
+    // Calcular promedios generales y redondear a 2 decimales para una exportación JSON limpia
+    const avgTemp = validRecordsCount > 0 ? +(sumTemp / validRecordsCount).toFixed(2) : 0;
+    const avgHum  = validRecordsCount > 0 ? +(sumHum / validRecordsCount).toFixed(2) : 0;
+    const avgPres = validRecordsCount > 0 ? +(sumPres / validRecordsCount).toFixed(2) : 0;
     
     console.log(`[Worker] Filtrado completo. Registros válidos: ${validRecordsCount}. Promedios calculados y Tops extraídos.`);
     
@@ -73,8 +73,8 @@ self.onmessage = function(e) {
                 humedad: avgHum,
                 presion: avgPres
             },
-            top10Temperatura: top10Temp,
-            top10Presion: top10Pres
+            top10Temperatura: top10Temp.map(t => +t.toFixed(2)),
+            top10Presion: top10Pres.map(p => +p.toFixed(2))
         }
     });
 };
