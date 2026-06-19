@@ -82,6 +82,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
+    // Si el usuario usa el botón "Atrás" del navegador, la página se carga desde el caché (bfcache).
+    // Necesitamos actualizar el tiempo y reanudar la música.
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            const currentSavedTime = localStorage.getItem('bgMusicTime');
+            const shouldPlay = localStorage.getItem('bgMusicPlaying') === 'true';
+            
+            if (currentSavedTime) {
+                audio.currentTime = parseFloat(currentSavedTime);
+            }
+            
+            if (shouldPlay && audio.paused) {
+                audio.play().catch(e => {});
+                updateBtnUI();
+            }
+        }
+    });
+    
     // Guardado periódico por si acaso
     setInterval(() => {
         if (!audio.paused) {
