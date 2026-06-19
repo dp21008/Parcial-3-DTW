@@ -9,9 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.loop = true;
     audio.volume = 0.4;
 
-    // Restaurar estado
+    // Restaurar estado: Si es la primera visita (null), lo activamos por defecto.
+    let isPlayingStr = localStorage.getItem('bgMusicPlaying');
+    if (isPlayingStr === null) {
+        localStorage.setItem('bgMusicPlaying', 'true');
+        isPlayingStr = 'true';
+    }
+    const isPlaying = isPlayingStr === 'true';
     const savedTime = localStorage.getItem('bgMusicTime');
-    const isPlaying = localStorage.getItem('bgMusicPlaying') === 'true';
 
     if (savedTime) {
         audio.currentTime = parseFloat(savedTime);
@@ -33,13 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Intentar reproducir automáticamente si estaba reproduciéndose antes
+    // Intentar reproducir automáticamente si estaba reproduciéndose antes o por defecto
     if (isPlaying) {
         audio.play().then(() => {
             updateBtnUI();
         }).catch(err => {
             console.log('Autoplay bloqueado por el navegador, requiere interacción del usuario.', err);
             updateBtnUI();
+            
+            // Truco para autoplay: Escuchar el primer clic en CUALQUIER parte de la página para arrancar
+            const playOnInteract = () => {
+                if (localStorage.getItem('bgMusicPlaying') === 'true') {
+                    audio.play().then(() => updateBtnUI()).catch(e => {});
+                }
+                document.removeEventListener('click', playOnInteract);
+            };
+            document.addEventListener('click', playOnInteract);
         });
     } else {
         updateBtnUI();
