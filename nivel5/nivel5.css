@@ -48,8 +48,37 @@ body {
     padding: 2rem;
     max-width: 900px;
     width: 100%;
-    box-shadow: 0 0 30px rgba(138, 43, 226, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.3), inset 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+/* Cristales decorativos */
+.crystal {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: #00ffff;
+    transform: rotate(45deg);
+    animation: pulse-crystal 1.8s infinite;
+    box-shadow: 
+        0 0 15px #00ffff,
+        0 0 40px #8a2be2,
+        0 0 80px #8a2be2;
+}
+
+.crystal-left {
+    top: 30px;
+    left: 30px;
+}
+
+.crystal-right {
+    top: 30px;
+    right: 30px;
+}
+
+@keyframes pulse-crystal {
+    0% { transform: rotate(45deg) scale(1); }
+    50% { transform: rotate(45deg) scale(1.25); }
+    100% { transform: rotate(45deg) scale(1); }
 }
 
 h1, h2 {
