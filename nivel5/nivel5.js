@@ -30,6 +30,7 @@ setInterval(() => {
 
 // Genera 250,000 registros simulados con algunos valores negativos aleatorios
 function generateMassiveData() {
+    console.log("[Nivel 5] Iniciando generación masiva de 250,000 registros...");
     const data = [];
     for (let i = 0; i < 250000; i++) {
         // Generar valores válidos
@@ -52,6 +53,7 @@ function generateMassiveData() {
             presion: pres
         });
     }
+    console.log("[Nivel 5] Generación completa. Array resultante con longitud:", data.length);
     return data;
 }
 
@@ -63,6 +65,7 @@ startBtn.addEventListener("click", () => {
     setTimeout(() => {
         const rawData = generateMassiveData();
         
+        console.log("[Nivel 5] Enviando datos al Web Worker...");
         statusMessage.textContent = "Datos generados. Iniciando procesamiento en Portal Cuántico (Web Worker)...";
         progressSection.style.display = "block";
         statsCard.style.display = "none";
@@ -82,6 +85,7 @@ startBtn.addEventListener("click", () => {
                 progressText.textContent = msg.processed.toLocaleString("es") + " / 250,000 registros";
 
             } else if (msg.type === "result") {
+                console.log("[Nivel 5] Worker finalizó y retornó resultados:", msg.data);
                 progressBar.style.width = "100%";
                 progressBar.setAttribute("aria-valuenow", 100);
                 progressPercent.textContent = "100%";
@@ -139,7 +143,11 @@ function displayFinalResults(data) {
 
 // Implementación de la exportación a JSON
 downloadBtn.addEventListener("click", () => {
-    if (!globalResultData) return;
+    if (!globalResultData) {
+        console.warn("[Nivel 5] Intento de descarga sin datos disponibles.");
+        return;
+    }
+    console.log("[Nivel 5] Generando Blob JSON para exportación...");
 
     // Crear un Blob con la cadena JSON
     const jsonString = JSON.stringify(globalResultData, null, 4);

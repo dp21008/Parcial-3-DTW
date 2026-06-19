@@ -4,6 +4,8 @@ self.onmessage = function(e) {
     const data = e.data;
     const totalRecords = data.length;
     
+    console.log(`[Worker] Recibidos ${totalRecords} registros para procesamiento.`);
+    
     let validRecordsCount = 0;
     let sumTemp = 0, sumHum = 0, sumPres = 0;
     
@@ -58,6 +60,8 @@ self.onmessage = function(e) {
     const avgTemp = validRecordsCount > 0 ? (sumTemp / validRecordsCount) : 0;
     const avgHum  = validRecordsCount > 0 ? (sumHum / validRecordsCount) : 0;
     const avgPres = validRecordsCount > 0 ? (sumPres / validRecordsCount) : 0;
+    
+    console.log(`[Worker] Filtrado completo. Registros válidos: ${validRecordsCount}. Promedios calculados y Tops extraídos.`);
     
     // Retornar resultados al hilo principal
     self.postMessage({
