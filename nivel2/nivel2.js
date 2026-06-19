@@ -772,6 +772,15 @@ function roundRect(ctx, x, y, w, h, r) {
     ctx.closePath();
 }
 
+//Evento para avanzar al siguiente nivel
+nextLevelBtn.addEventListener("click", () => {
+
+
+    window.location.href =
+        "../nivel3/nivel3.html";
+
+
+});
 
 // ========================
 // INICIAR
