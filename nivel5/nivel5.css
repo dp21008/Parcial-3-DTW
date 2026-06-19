@@ -100,11 +100,12 @@ h2 {
 }
 
 .description {
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #ccc;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.72rem;
+    line-height: 2;
+    max-width: 680px;
+    margin: 0 auto 2rem;
+    color: #b0c4de;
 }
 
 /* UI Indicator */
