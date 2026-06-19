@@ -208,18 +208,24 @@ h2 {
     margin-top: 2rem;
     animation: fadeInSlideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.65rem;
+    font-size: 0.45rem;
+    line-height: 1.8;
 }
 
 .stats-header {
     border-bottom: 1px solid #8a2be2;
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     background-color: #1b0a3a !important;
 }
 
 .stats-body {
     color: #fff;
+}
+
+.stats-body h5 {
+    font-size: 0.65rem !important;
+    line-height: 1.6;
 }
 
 .sensor-block {
@@ -232,6 +238,7 @@ h2 {
     font-weight: bold;
     border-bottom: 1px solid #444;
     padding-bottom: 0.5rem;
+    font-size: 0.5rem;
 }
 
 .stat-item {
