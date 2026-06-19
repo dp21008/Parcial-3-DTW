@@ -167,7 +167,7 @@ h2 {
 
 .download-btn {
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.45rem;
+    font-size: 0.55rem;
     color: #fff;
     background: linear-gradient(45deg, #8a2be2, #4b0082);
     border: 1px solid #00ffff;
@@ -227,14 +227,14 @@ h2 {
     margin-top: 2rem;
     animation: fadeInSlideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.45rem;
+    font-size: 0.55rem;
     line-height: 1.8;
 }
 
 .stats-header {
     border-bottom: 1px solid #8a2be2;
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     background-color: #1b0a3a !important;
 }
 
@@ -243,7 +243,7 @@ h2 {
 }
 
 .stats-body h5 {
-    font-size: 0.65rem !important;
+    font-size: 0.7rem !important;
     line-height: 1.6;
 }
 
@@ -257,7 +257,7 @@ h2 {
     font-weight: bold;
     border-bottom: 1px solid #444;
     padding-bottom: 0.5rem;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
 }
 
 .stat-item {
