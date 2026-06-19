@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nivel 2 - El Cartógrafo Perdido</title>
+
+    <link rel="stylesheet" href="nivel2.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="cave-bg"></div>
+
+    <main class="container">
+
+        <!-- tarjeta base -->
+        <section class="cave-card">
+
+            <!-- estos div servirán para hacer decoraciones brillantes -->
+            <div class="crystal crystal-left"></div>
+            <div class="crystal crystal-right"></div>
+
+            <h1>NIVEL 2</h1>
+
+            <h2>EL CARTÓGRAFO PERDIDO</h2>
+
+            <p class="description">
+                El cartógrafo perdido ha revelado tu ubicación entre los viejos caminos.
+                Sigue la ruta señalada y alcanza la meta para avanzar al siguiente desafío.
+            </p>
+
+            <canvas id="mapCanvas" width="700" height="450"></canvas>
+
+            <div id="statusMessage" class="status-message"></div>
+
+            <button id="nextLevelBtn" class="next-btn" disabled>
+                CONTINUAR AL NIVEL 3
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="nivel2.js"></script>
+
+</body>
+
+</html>
