@@ -216,10 +216,17 @@ h2 {
 }
 
 .success-message {
-    animation: flashSuccess 2s infinite alternate;
+    letter-spacing: 2px;
+    animation: flashSuccess 1.5s infinite alternate;
+    /* Contorno negro sólido para asegurar legibilidad */
+    text-shadow: 
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
 }
 
 @keyframes flashSuccess {
-    0% { color: #0f0; text-shadow: 0 0 5px #0f0; }
-    100% { color: #afffaf; text-shadow: 0 0 20px #0f0; }
+    0% { color: #00ff00; filter: drop-shadow(0 0 5px #00ff00); }
+    100% { color: #ffffff; filter: drop-shadow(0 0 15px #00ff00); }
 }
