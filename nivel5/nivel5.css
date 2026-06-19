@@ -207,6 +207,8 @@ h2 {
     border: 1px solid #8a2be2;
     margin-top: 2rem;
     animation: fadeInSlideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
 }
 
 .stats-header {
@@ -250,7 +252,7 @@ h2 {
 
 .stats-footer {
     border-top: 1px solid #8a2be2;
-    font-size: 0.9rem;
+    font-size: 0.65rem;
 }
 
 .success-message {
