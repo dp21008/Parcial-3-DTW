@@ -177,18 +177,4 @@ downloadBtn.addEventListener("click", () => {
     URL.revokeObjectURL(url);
 });
 
-// Lógica de redirección inteligente al inicio
-document.getElementById('homeBtn').addEventListener('click', () => {
-    const path = window.location.pathname;
-    const isLocal = path.includes('/nivel5');
-    // Si estamos en un servidor que sirve la carpeta, retrocedemos asegurándonos del path absoluto
-    if (isLocal) {
-        const rootPath = path.substring(0, path.indexOf('/nivel5'));
-        window.location.href = (rootPath === '' ? '.' : rootPath) + '/index.html';
-    } else {
-        // Fallback por si la estructura cambia
-        window.location.href = '../index.html';
-    }
-});
-
 })(); // Fin de la función autoejecutable (IIFE)
