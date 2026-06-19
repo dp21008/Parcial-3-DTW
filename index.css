@@ -233,7 +233,7 @@ footer {
 /* Indicador de scroll (flechas animadas) */
 .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 60px; /* Subida de 30px a 60px */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -241,19 +241,19 @@ footer {
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    padding: 10px;
+    padding: 15px;
 }
 
 .scroll-indicator span {
     display: block;
-    width: 20px;
-    height: 20px;
-    border-bottom: 4px solid var(--accent);
-    border-right: 4px solid var(--accent);
+    width: 30px; /* Aumentado de 20px a 30px */
+    height: 30px; /* Aumentado de 20px a 30px */
+    border-bottom: 6px solid var(--accent); /* Aumentado de 4px a 6px */
+    border-right: 6px solid var(--accent); /* Aumentado de 4px a 6px */
     transform: rotate(45deg);
-    margin: -8px 0;
+    margin: -12px 0; /* Ajustado el margen por el nuevo tamaño */
     animation: scroll-anim 2s infinite;
-    box-shadow: 2px 2px 5px rgba(0,255,255,0.2);
+    box-shadow: 3px 3px 6px rgba(0,255,255,0.3);
 }
 
 .scroll-indicator span:nth-child(2) {
@@ -265,9 +265,9 @@ footer {
 }
 
 @keyframes scroll-anim {
-    0% { opacity: 0; transform: rotate(45deg) translate(-15px, -15px); }
+    0% { opacity: 0; transform: rotate(45deg) translate(-20px, -20px); }
     50% { opacity: 1; }
-    100% { opacity: 0; transform: rotate(45deg) translate(15px, 15px); }
+    100% { opacity: 0; transform: rotate(45deg) translate(20px, 20px); }
 }
 
 /* Responsividad */
