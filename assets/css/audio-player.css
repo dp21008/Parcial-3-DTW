@@ -1,0 +1,40 @@
+/* Estilos para el reproductor de audio global */
+#audio-widget {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+#audio-toggle-btn {
+    background: rgba(10, 10, 25, 0.85);
+    border: 2px solid #8a2be2;
+    color: #00ffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+#audio-toggle-btn:hover {
+    background: rgba(138, 43, 226, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+#audio-toggle-btn.is-playing {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    color: #fff;
+}
+
+.audio-text {
+    margin-top: 2px;
+}
