@@ -1,0 +1,225 @@
+/* nivel5.css - Estilos específicos para el Portal Cuántico */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    background-color: #050510;
+}
+
+.portal-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, #1b0a3a 0%, #050510 100%);
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Efecto de partículas / portal de fondo */
+.portal-bg::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 200vw; height: 200vw;
+    background: conic-gradient(from 0deg, transparent 0%, rgba(138, 43, 226, 0.1) 20%, transparent 40%, rgba(0, 255, 255, 0.1) 60%, transparent 80%);
+    transform: translate(-50%, -50%);
+    animation: rotatePortal 20s linear infinite;
+    border-radius: 50%;
+}
+
+@keyframes rotatePortal {
+    0%   { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.portal-card {
+    background: rgba(10, 10, 25, 0.85);
+    border: 2px solid #8a2be2;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+h1, h2 {
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px currentColor;
+}
+
+h1 {
+    color: #8a2be2;
+    font-size: 2rem;
+}
+
+h2 {
+    color: #00ffff;
+    font-size: 1.2rem;
+}
+
+.description {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+/* UI Indicator */
+.ui-indicator {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: #0f0;
+    margin-bottom: 2rem;
+    padding: 10px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px dashed #0f0;
+    border-radius: 8px;
+}
+
+.pulse-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    background-color: #0f0;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(0.9); opacity: 1; }
+}
+
+/* Botones */
+.action-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(45deg, #8a2be2, #4b0082);
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.action-btn:hover:not(:disabled) {
+    background: linear-gradient(45deg, #9b4dff, #5c00a3);
+    box-shadow: 0 0 15px #8a2be2;
+    transform: scale(1.02);
+}
+
+.action-btn:disabled {
+    background: #333;
+    border-color: #555;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* Progreso */
+.progress-section {
+    margin-top: 2rem;
+}
+
+.progress-label {
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-family: monospace;
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+}
+
+.status-message {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: #00ffff;
+}
+
+/* Stats Card overrides */
+.stats-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #8a2be2;
+    margin-top: 2rem;
+}
+
+.stats-header {
+    border-bottom: 1px solid #8a2be2;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    background-color: #1b0a3a !important;
+}
+
+.stats-body {
+    color: #fff;
+}
+
+.sensor-block {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #444 !important;
+}
+
+.sensor-title {
+    color: #8a2be2;
+    font-weight: bold;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    color: #ccc;
+    border-color: #444;
+}
+
+.top-list li {
+    padding: 3px 0;
+    border-bottom: 1px dotted #444;
+    color: #bbb;
+}
+.top-list li:last-child {
+    border-bottom: none;
+}
+
+.stats-footer {
+    border-top: 1px solid #8a2be2;
+    font-size: 0.9rem;
+}
+
+.success-message {
+    animation: flashSuccess 2s infinite alternate;
+}
+
+@keyframes flashSuccess {
+    0% { color: #0f0; text-shadow: 0 0 5px #0f0; }
+    100% { color: #afffaf; text-shadow: 0 0 20px #0f0; }
+}
