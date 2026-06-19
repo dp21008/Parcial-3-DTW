@@ -92,9 +92,11 @@ startBtn.addEventListener("click", () => {
                 // Guardar los resultados globalmente para poder descargarlos en Fase 4
                 globalResultData = msg.data;
 
-                // Actualizar interfaz (Se finalizará en Fase 4)
+                // Mostrar interfaz final
+                displayFinalResults(globalResultData);
+                
                 statusMessage.textContent = "¡Análisis del Portal Cuántico completado!";
-                alert("Worker finalizó. (Fase 2 y 3 completadas. La presentación de datos será en Fase 4)");
+                successMessage.style.display = "block";
                 
                 worker.terminate();
             }
@@ -106,4 +108,52 @@ startBtn.addEventListener("click", () => {
         };
 
     }, 50);
+});
+
+// Función para poblar la UI con los resultados calculados
+function displayFinalResults(data) {
+    validRecordsCount.textContent = data.totalValid.toLocaleString("es");
+
+    avgTemp.textContent = data.averages.temperatura.toFixed(2) + " °C";
+    avgHum.textContent = data.averages.humedad.toFixed(2) + " %";
+    avgPres.textContent = data.averages.presion.toFixed(2) + " hPa";
+
+    // Llenar listas de Top 10
+    top10TempList.innerHTML = "";
+    data.top10Temperatura.forEach(t => {
+        const li = document.createElement("li");
+        li.textContent = t.toFixed(2) + " °C";
+        top10TempList.appendChild(li);
+    });
+
+    top10PresList.innerHTML = "";
+    data.top10Presion.forEach(p => {
+        const li = document.createElement("li");
+        li.textContent = p.toFixed(2) + " hPa";
+        top10PresList.appendChild(li);
+    });
+
+    statsCard.style.display = "block";
+    statsCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+// Implementación de la exportación a JSON
+downloadBtn.addEventListener("click", () => {
+    if (!globalResultData) return;
+
+    // Crear un Blob con la cadena JSON
+    const jsonString = JSON.stringify(globalResultData, null, 4);
+    const blob = new Blob([jsonString], { type: "application/json" });
+    
+    // Crear URL temporal y disparar la descarga
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "resultados_portal_cuantico.json";
+    document.body.appendChild(a);
+    a.click();
+    
+    // Limpieza
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 });
