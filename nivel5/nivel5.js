@@ -2,6 +2,7 @@
 
 (() => {
 const startBtn = document.getElementById("startBtn");
+const levelDescription = document.getElementById("levelDescription");
 const uiCounter = document.getElementById("uiCounter");
 const statusMessage = document.getElementById("statusMessage");
 const progressSection = document.getElementById("progressSection");
@@ -94,6 +95,7 @@ startBtn.addEventListener("click", () => {
                 progressSection.style.display = "none";
                 startBtn.style.display = "none";
                 statusMessage.style.display = "none";
+                levelDescription.style.display = "none";
 
                 // Guardar los resultados globalmente para poder descargarlos en Fase 4
                 globalResultData = msg.data;
