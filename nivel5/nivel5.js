@@ -87,12 +87,11 @@ startBtn.addEventListener("click", () => {
 
             } else if (msg.type === "result") {
                 console.log("[Nivel 5] Worker finalizó y retornó resultados:", msg.data);
-                progressBar.style.width = "100%";
-                progressBar.setAttribute("aria-valuenow", 100);
-                progressPercent.textContent = "100%";
-                progressText.textContent = "Procesamiento finalizado";
                 
-                progressBar.classList.remove("progress-bar-animated");
+                // Ocultar los elementos de carga y el botón para dejar la interfaz limpia
+                progressSection.style.display = "none";
+                startBtn.style.display = "none";
+                statusMessage.style.display = "none";
 
                 // Guardar los resultados globalmente para poder descargarlos en Fase 4
                 globalResultData = msg.data;
